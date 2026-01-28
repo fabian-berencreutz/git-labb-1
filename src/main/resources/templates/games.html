@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Retro Games</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Mina favoritspel (Retro)</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Utgivningsår</th>
+            <th>Konsol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="game : ${games}">
+            <td th:text="${game.title}">Titel</td>
+            <td th:text="${game.releaseYear}">År</td>
+            <td th:text="${game.console}">Konsol</td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<a href="/">Gå tillbaka till startsidan</a>
+
+</body>
+</html>
