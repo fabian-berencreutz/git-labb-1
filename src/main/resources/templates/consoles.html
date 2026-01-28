@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrokonsoler</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 600px; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        a { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<h1>Klassiska Spelkonsoler</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Namn</th>
+            <th>Lanseringsår</th>
+            <th>Tillverkare</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Loopar igenom listan "consoles" från controllern -->
+        <tr th:each="console : ${consoles}">
+            <td th:text="${console.name}">Namn</td>
+            <td th:text="${console.releaseYear}">År</td>
+            <td th:text="${console.manufacturer}">Tillverkare</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/">Tillbaka till startsidan</a>
+
+</body>
+</html>
