@@ -9,7 +9,7 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("greeting", "Välkommen!");
+        model.addAttribute("greeting", "test för konflikt!!");
         //PR demo after resolving merge conflict (Labb1)
         return "home";
     }
