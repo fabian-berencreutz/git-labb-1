@@ -1,11 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>About</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        ul { margin-top: 20px; }
+        a { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; }
+    </style>
 </head>
 <body>
-<h1>About this project</h1>
-<p>This is a demo project for Git Labb1.</p>
+<h1>Om detta projekt</h1>
+<p>Detta är en labbuppgift för Git-kursen på IT-Högskolan.</p>
+
+<h2>Skapare:</h2>
+<ul>
+    <li th:each="p : ${creators}">
+        <span th:text="${p.name}">Namn</span> - 
+        <span th:text="${p.age}">Ålder</span> år 
+        (<span th:text="${p.email}">E-post</span>)
+    </li>
+</ul>
+
 <br>
 <a href="/">Tillbaka till startsidan</a>
 </body>
