@@ -2,11 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Products</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { border-collapse: collapse; width: 100%; max-width: 600px; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        a { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
 <h1>Product list</h1>
-<ul>
-    <li th:each="p : ${products}" th:text="${p}"></li>
-</ul>
+
+<table>
+    <thead>
+    <tr>
+        <th>Namn</th>
+        <th>Pris</th>
+        <th>Kategori</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${products}">
+        <td th:text="${p.name}">Namn</td>
+        <td th:text="${p.price}">Pris</td>
+        <td th:text="${p.category}">Kategori</td>
+    </tr>
+    </tbody>
+</table>
+
+<a href="/">Tillbaka till startsidan</a>
+
 </body>
 </html>
