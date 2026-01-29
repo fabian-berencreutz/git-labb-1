@@ -3,8 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin: 10px 0; }
+        a { text-decoration: none; color: #007bff; font-size: 1.1rem; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
     <h1 th:text="${greeting}">Greeting</h1>
+
+    <nav>
+        <h2>Meny</h2>
+        <ul>
+            <li><a th:href="@{/consoles}">🕹️ Retrokonsoler</a></li>
+            <li><a th:href="@{/games}">🎮 Retrospel</a></li>
+            <li><a th:href="@{/thinkpads}">💻 ThinkPad Museum</a></li>
+            <li><a th:href="@{/users}">👥 Användare</a></li>
+            <li><a th:href="@{/products}">📦 Produkter</a></li>
+            <li><a th:href="@{/about}">ℹ️ Om projektet</a></li>
+        </ul>
+    </nav>
 </body>
 </html>
