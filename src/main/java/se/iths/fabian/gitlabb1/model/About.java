@@ -1,0 +1,25 @@
+package se.iths.fabian.gitlabb1.model;
+
+public class About {
+    private String title;
+    private String description;
+    private String author;
+
+    public About(String title, String description, String author) {
+        this.title = title;
+        this.description = description;
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+}
